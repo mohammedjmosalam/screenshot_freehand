@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:screenshot_freehand/screenshot_freehand.dart';
+import 'package:screenshot_freehand/src/data/box_theme.dart';
+import 'package:screenshot_freehand/src/data/screen_theme.dart';
 part 'widget/screen_shot_body.dart';
 part 'widget/part_screen_shot.dart';
 part 'widget/select_screen_shot_type.dart';
@@ -17,12 +19,28 @@ class ScreenShot extends StatelessWidget {
     this.freeHandScreenIcon,
     this.fullScreenIcon,
     this.partScreenIcon,
+    this.allBoxTheme,
+    this.cancelScreenShotIcon,
+    this.cancelTheme,
+    this.freeHandScreenTheme,
+    this.fullScreenTheme,
+    this.partScreenTheme,
+    this.screenTheme,
+    this.screenShotPositionAlign = Alignment.topCenter,
   });
   final Widget child;
   final ScreenShotController screenShotController;
   final Icon? fullScreenIcon;
   final Icon? partScreenIcon;
   final Icon? freeHandScreenIcon;
+  final Icon? cancelScreenShotIcon;
+  final ScreenTheme? screenTheme;
+  final BoxTheme? allBoxTheme;
+  final BoxTheme? fullScreenTheme;
+  final BoxTheme? partScreenTheme;
+  final BoxTheme? freeHandScreenTheme;
+  final BoxTheme? cancelTheme;
+  final Alignment screenShotPositionAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +56,14 @@ class ScreenShot extends StatelessWidget {
                 freeHandScreenIcon: freeHandScreenIcon,
                 fullScreenIcon: fullScreenIcon,
                 partScreenIcon: partScreenIcon,
+                allBoxTheme: allBoxTheme,
+                cancelScreenShotIcon: cancelScreenShotIcon,
+                cancelTheme: cancelTheme,
+                freeHandScreenTheme: freeHandScreenTheme,
+                fullScreenTheme: fullScreenTheme,
+                partScreenTheme: partScreenTheme,
+                screenTheme: screenTheme,
+                screenShotPositionAlign: screenShotPositionAlign,
               ),
             ],
           ),

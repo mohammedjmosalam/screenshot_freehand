@@ -6,10 +6,26 @@ class _ScreenShotBody extends StatelessWidget {
     this.freeHandScreenIcon,
     this.fullScreenIcon,
     this.partScreenIcon,
+    this.allBoxTheme,
+    this.cancelScreenShotIcon,
+    this.cancelTheme,
+    this.freeHandScreenTheme,
+    this.fullScreenTheme,
+    this.partScreenTheme,
+    this.screenTheme,
+    required this.screenShotPositionAlign,
   });
   final Icon? fullScreenIcon;
   final Icon? partScreenIcon;
   final Icon? freeHandScreenIcon;
+  final Icon? cancelScreenShotIcon;
+  final ScreenTheme? screenTheme;
+  final BoxTheme? allBoxTheme;
+  final BoxTheme? fullScreenTheme;
+  final BoxTheme? partScreenTheme;
+  final BoxTheme? freeHandScreenTheme;
+  final BoxTheme? cancelTheme;
+  final Alignment screenShotPositionAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +39,7 @@ class _ScreenShotBody extends StatelessWidget {
           children: [
             Container(
               color: state.isEnableScreenShot || state.showScreenShotType
-                  ? Colors.white.withOpacity(0.4)
+                  ? screenTheme?.barrierColor ?? Colors.white.withOpacity(0.4)
                   : null,
             ),
             RepaintBoundary(
@@ -40,6 +56,14 @@ class _ScreenShotBody extends StatelessWidget {
                 freeHandScreenIcon: freeHandScreenIcon,
                 fullScreenIcon: fullScreenIcon,
                 partScreenIcon: partScreenIcon,
+                allBoxTheme: allBoxTheme,
+                cancelScreenShotIcon: cancelScreenShotIcon,
+                cancelTheme: cancelTheme,
+                freeHandScreenTheme: freeHandScreenTheme,
+                fullScreenTheme: fullScreenTheme,
+                partScreenTheme: partScreenTheme,
+                screenTheme: screenTheme,
+                screenShotPositionAlign: screenShotPositionAlign,
               ),
           ],
         );
