@@ -1,6 +1,6 @@
 name: screenshot_freehand
 description: Screen shot package like native screen shot on windows.
-version: 1.0.1
+version: 1.0.1+1
 repository: https://github.com/mohammedjmosalam/screenshot_freehand
 
 environment:

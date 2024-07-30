@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return ScreenShot(
       screenShotController: screenShotController,
+      screenShotPositionAlign: const Alignment(0, -0.9),
       child: Scaffold(
         backgroundColor: Colors.amber.shade200,
         appBar: AppBar(

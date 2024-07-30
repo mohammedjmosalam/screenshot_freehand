@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:screenshot_freehand/screenshot_freehand.dart';
-import 'package:screenshot_freehand/src/data/box_theme.dart';
-import 'package:screenshot_freehand/src/data/screen_theme.dart';
+
 part 'widget/screen_shot_body.dart';
 part 'widget/part_screen_shot.dart';
 part 'widget/select_screen_shot_type.dart';
@@ -27,6 +26,11 @@ class ScreenShot extends StatelessWidget {
     this.partScreenTheme,
     this.screenTheme,
     this.screenShotPositionAlign = Alignment.topCenter,
+    this.cancelWidget,
+    this.freeHandScreenWidget,
+    this.fullScreenWidget,
+    this.partScreenWidget,
+    this.paddingIcons,
   });
   final Widget child;
   final ScreenShotController screenShotController;
@@ -41,6 +45,11 @@ class ScreenShot extends StatelessWidget {
   final BoxTheme? freeHandScreenTheme;
   final BoxTheme? cancelTheme;
   final Alignment screenShotPositionAlign;
+  final Widget? fullScreenWidget;
+  final Widget? partScreenWidget;
+  final Widget? freeHandScreenWidget;
+  final Widget? cancelWidget;
+  final EdgeInsets? paddingIcons;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +73,11 @@ class ScreenShot extends StatelessWidget {
                 partScreenTheme: partScreenTheme,
                 screenTheme: screenTheme,
                 screenShotPositionAlign: screenShotPositionAlign,
+                cancelWidget: cancelWidget,
+                freeHandScreenWidget: freeHandScreenWidget,
+                fullScreenWidget: fullScreenWidget,
+                partScreenWidget: partScreenWidget,
+                paddingIcons: paddingIcons,
               ),
             ],
           ),

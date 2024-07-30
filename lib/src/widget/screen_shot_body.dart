@@ -2,7 +2,6 @@ part of '../screen_shot.dart';
 
 class _ScreenShotBody extends StatelessWidget {
   const _ScreenShotBody({
-    super.key,
     this.freeHandScreenIcon,
     this.fullScreenIcon,
     this.partScreenIcon,
@@ -14,6 +13,11 @@ class _ScreenShotBody extends StatelessWidget {
     this.partScreenTheme,
     this.screenTheme,
     required this.screenShotPositionAlign,
+    this.cancelWidget,
+    this.freeHandScreenWidget,
+    this.fullScreenWidget,
+    this.partScreenWidget,
+    this.paddingIcons,
   });
   final Icon? fullScreenIcon;
   final Icon? partScreenIcon;
@@ -26,6 +30,11 @@ class _ScreenShotBody extends StatelessWidget {
   final BoxTheme? freeHandScreenTheme;
   final BoxTheme? cancelTheme;
   final Alignment screenShotPositionAlign;
+  final Widget? fullScreenWidget;
+  final Widget? partScreenWidget;
+  final Widget? freeHandScreenWidget;
+  final Widget? cancelWidget;
+  final EdgeInsets? paddingIcons;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +73,11 @@ class _ScreenShotBody extends StatelessWidget {
                 partScreenTheme: partScreenTheme,
                 screenTheme: screenTheme,
                 screenShotPositionAlign: screenShotPositionAlign,
+                cancelWidget: cancelWidget,
+                freeHandScreenWidget: freeHandScreenWidget,
+                fullScreenWidget: fullScreenWidget,
+                partScreenWidget: partScreenWidget,
+                paddingIcons: paddingIcons,
               ),
           ],
         );

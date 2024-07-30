@@ -2,7 +2,6 @@ part of '../screen_shot.dart';
 
 class _SelectScreenShotType extends StatelessWidget {
   const _SelectScreenShotType({
-    super.key,
     this.freeHandScreenIcon,
     this.fullScreenIcon,
     this.partScreenIcon,
@@ -14,6 +13,11 @@ class _SelectScreenShotType extends StatelessWidget {
     this.partScreenTheme,
     this.screenTheme,
     required this.screenShotPositionAlign,
+    this.cancelWidget,
+    this.freeHandScreenWidget,
+    this.fullScreenWidget,
+    this.partScreenWidget,
+    this.paddingIcons,
   });
   final Icon? fullScreenIcon;
   final Icon? partScreenIcon;
@@ -26,6 +30,11 @@ class _SelectScreenShotType extends StatelessWidget {
   final BoxTheme? freeHandScreenTheme;
   final BoxTheme? cancelTheme;
   final Alignment screenShotPositionAlign;
+  final Widget? fullScreenWidget;
+  final Widget? partScreenWidget;
+  final Widget? freeHandScreenWidget;
+  final Widget? cancelWidget;
+  final EdgeInsets? paddingIcons;
 
   @override
   Widget build(BuildContext context) {
@@ -52,31 +61,39 @@ class _SelectScreenShotType extends StatelessWidget {
               onTap: () =>
                   context.read<ScreenShotController>().takeFullScreenShot(),
               iconData: Icons.fullscreen,
-              boxTheme: fullScreenTheme,
+              boxTheme: fullScreenTheme ?? allBoxTheme,
               icon: fullScreenIcon,
+              customWidget: fullScreenWidget,
+              paddingIcons: paddingIcons,
             ),
             _AppIconWidget(
               onTap: () => context
                   .read<ScreenShotController>()
                   .selectedTypeScreenShot(ScreenShotType.freeHand),
               iconData: Icons.draw,
-              boxTheme: freeHandScreenTheme,
+              boxTheme: freeHandScreenTheme ?? allBoxTheme,
               icon: freeHandScreenIcon,
+              customWidget: freeHandScreenWidget,
+              paddingIcons: paddingIcons,
             ),
             _AppIconWidget(
               onTap: () => context
                   .read<ScreenShotController>()
                   .selectedTypeScreenShot(ScreenShotType.part),
               iconData: Ionicons.scan,
-              boxTheme: partScreenTheme,
+              boxTheme: partScreenTheme ?? allBoxTheme,
               icon: partScreenIcon,
+              customWidget: partScreenWidget,
+              paddingIcons: paddingIcons,
             ),
             _AppIconWidget(
               onTap: () =>
                   context.read<ScreenShotController>().cancelScreenShot(),
               iconData: Ionicons.close,
-              boxTheme: cancelTheme,
+              boxTheme: cancelTheme ?? allBoxTheme,
               icon: cancelScreenShotIcon,
+              customWidget: cancelWidget,
+              paddingIcons: paddingIcons,
             ),
           ],
         ),
